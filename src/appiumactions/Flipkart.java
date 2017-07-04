@@ -22,9 +22,10 @@ public class Flipkart {
 					capabilities.setCapability("deviceName", "ccdcb242");
 					capabilities.setCapability("platformVersion","6.0.1");
 					//capabilities.setCapability("app","C:\\JavaSelenium practice\\And2\\APK Files\\Flipkart_5.9.apk");
-					capabilities.setCapability("appPackage", "com.flipkart.android");
+					//capabilities.setCapability("appPackage", "com.flipkart.android");
+					capabilities.setCapability("appActivity", "android.task.contacts");
 					//capabilities.setCapability("appActivity", "com.flipkart.android.SplashActivity");
-					capabilities.setCapability("appActivity", "com.flipkart.android.activity.HomeFragmentHolderActivity");
+					//capabilities.setCapability("appActivity", "com.flipkmailart.android.activity.HomeFragmentHolderActivity");
 					
 					driver=new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities );
 					driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
@@ -49,12 +50,28 @@ public class Flipkart {
 					
 					driver.findElement(By.name("Apply All")).click();
 					
+					driver.findElement(By.name(" Discount")).click();
+					
+					
+					driver.findElement(By.name("30% or More")).click();
+					
+					driver.findElement(By.name("DONE")).click();
+					
 					driver.findElement(By.name(" Brand")).click();
 				//	driver.findElement(By.xpath("//android.view.ViewGroup[@index='6']//android.widget.TextView[@text='Bajaj']//android.widget.ImageView[@index='1']")).click();
 					
-					System.out.println(driver.getContext());
-					driver.findElement(By.xpath("//android.view.ViewGroup[@index='4']//android.widget.TextView[@text='Bajaj']")).click();
+					driver.findElement(By.name("Rotomix")).click();
 					driver.findElement(By.name("DONE")).click();
+					driver.findElement(By.name(" CLEAR")).click();
+					driver.findElement(By.name("CANCEL")).click();
+					System.out.println(driver.getContext());
+					//driver.findElement(By.xpath("//android.support.v4.widget.DrawerLayout[@id='drawer_layout']//android.widget.ScrollView[@index='1']//android.widget.TextView[@text='speedway']")).click();
+					driver.findElement(By.name("APPLY")).click();
+					
+					driver.findElement(By.name("Sort")).click();
+					driver.findElement(By.name("Popularity")).click();
+					
+					
 					
 					
 					

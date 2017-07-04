@@ -24,15 +24,25 @@ public class ZoomPinch  {
 		
 	public static void main(String[] args) throws MalformedURLException, InterruptedException { 
 			
-			DesiredCapabilities capabilities = new DesiredCapabilities();
+			/*DesiredCapabilities capabilities = new DesiredCapabilities();
 			capabilities.setCapability("automationName", "Appium");
 			capabilities.setCapability("platformVersion", "6.0.1");
 			capabilities.setCapability("platformName", "Android");
 			capabilities.setCapability("deviceName", "ccdcb242");
 			capabilities.setCapability("appPackage", "com.miui.gallery");
-			capabilities.setCapability("appActivity", "com.miui.gallery.activity.HomePageActivity");
+			capabilities.setCapability("appActivity", "com.miui.gallery.activity.HomePageActivity");*/
 			
-			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setCapability("automationName", "Appium");
+		cap.setCapability("platformName","Android");
+		cap.setCapability("deviceName", "ccdcb242");
+		cap.setCapability("platformVersion","6.0.1");
+		//capabilities.setCapability("app","C:\\JavaSelenium practice\\And2\\APK Files\\Flipkart_5.9.apk");
+		//cap.setCapability("appPackage", "com.android.phone");
+		//capabilities.setCapability("appActivity", "com.flipkart.android.SplashActivity");
+		cap.setCapability("appActivity", "android.task.contacts");
+
+			driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			Thread.sleep(3000);
 			driver.findElement(By.name("Albums")).click();
